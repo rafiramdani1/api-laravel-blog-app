@@ -1,0 +1,57 @@
+- Login [ ALMOST OK ]
+    = with email and password = DONE
+    = create token sanctum = DONE
+    = create token in table personal_access_token = DONE
+    = update is_login = 1/true in table user when user has been login success = DONE
+    = create condition/middleware, if user is already login, cannot access login endpoit = DONE
+    = create exp token = SKIP
+
+- Register [ OK ]
+    = with username, email, password, and confirm password = DONE
+    = cek validation, if username and email already registered = DONE
+    = Hash password = DONE
+    = save user if has been register success = DONE
+
+- Get profile user [ OK ]
+    = with authorization bearer token = DONE
+    = create middleware, the route profile can only accessed when user has login = DONE
+
+- Logout [ OK ]
+    = with authorization token bearer = DONE
+    = delete token in table token = DONE
+    = update is_login = false/0 in table users = DONE
+
+- JOIN table user and table Posts where id user === Posts user_id [ OK ]
+
+- Create post [ OK ]
+    = with authorization token bearer = DONE 
+    = add middleware in create post, the route create post can only access when user has login = DONE
+    = validate unique title inpost table = DONE
+    = save in posts database = DONE
+    = return post, user_id and username = DONE  
+
+- Get all posts [ OK ]
+    = return all posts and user_id, username = DONE
+
+- Get one Post [ OK ]
+    = return post and user_id = DONE
+
+- Update put Post = [OK]
+    = with authorization token bearer = DONE
+    = add middleware in update post, the route update post can only acces when user has login = DONE
+    = validate unique title inpost table = DONE
+    = add middleware for update only user with the same id user as the user_id in the post table = DONE
+    = return new data if successful = DONE
+
+- Delete post = [ OK ]
+    = with authorization token bearer = DONE
+    = add middleware in the delete post, the route delete post can only access when user has login = DONE
+    = add middleware for delete only user with the same user as the user_id in the post table = DONE 
+    = return message data deleted successful = DONE
+
+- JOIN table comments, user and post, for fitur comment = [ SKIP ]
+- get comment by post id = [ SKIP ]
+- create comment = [ SKIP ]
+- delete comment = [ SKIP ]
+
+- Search post by title or content = [ SKIP ]
